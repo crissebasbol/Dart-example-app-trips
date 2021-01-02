@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tripss_applicatin/review.dart';
 import 'description_place.dart';
 
 void main() {
@@ -8,6 +9,10 @@ void main() {
 class MyApp extends StatelessWidget {
   String descriptionDummy =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum diam ut molestie lobortis. Maecenas sed mollis felis. Phasellus egestas eleifend commodo. Suspendisse potenti. Vestibulum a sagittis nisl, quis tempus enim. Sed vitae lectus tincidunt, maximus nunc a, faucibus nulla. Aliquam euismod, eros at scelerisque mattis, diam lectus volutpat metus, sed sodales tortor odio ut nunc. Proin et elit pulvinar, pharetra elit eget, vestibulum erat. Ut ornare efficitur massa, in sodales neque tempus vitae.";
+  String pathImage = "assets/images/people.jpg";
+  String name = "Varuna Yasas";
+  String details = "1 review 5 photos";
+  String comments = "There is an amazing place in Sri Lanka";
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -34,7 +39,14 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text("Hola mundo feliz"),
           ),
-          body: new DesciptionPlace("Bahamas", 3.5, descriptionDummy),
+          body: Center(
+            child: Column(
+              children: [
+                new DesciptionPlace("Bahamas", 3.5, descriptionDummy),
+                new Review(pathImage, name, details, comments)
+              ],
+            ),
+          ),
         ));
   }
 }

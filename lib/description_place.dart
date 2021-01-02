@@ -1,11 +1,10 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'package:tripss_applicatin/utils.dart';
 
 class DesciptionPlace extends StatelessWidget {
-  String namePlace;
-  double stars;
-  String descriptionPlace;
+  final String namePlace;
+  final double stars;
+  final String descriptionPlace;
 
   DesciptionPlace(this.namePlace, this.stars, this.descriptionPlace);
 
@@ -24,7 +23,7 @@ class DesciptionPlace extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
         ),
-        this.showStars(stars)
+        Utils.showStars(stars)
       ],
     );
 
@@ -45,31 +44,5 @@ class DesciptionPlace extends StatelessWidget {
     );
 
     return toReturn;
-  }
-
-  Widget star(IconData icon) {
-    return Container(
-      margin: EdgeInsets.only(top: 323.0, right: 3.0),
-      child: Icon(
-        icon,
-        color: Color(0xFFf2C611),
-      ),
-    );
-  }
-
-  Widget showStars(double numberStars) {
-    List<Widget> stars = [];
-    for (var i = 0; i < 5; i++) {
-      if (numberStars >= 1) {
-        stars.add(this.star(Icons.star));
-      } else if (numberStars > 0.3) {
-        stars.add(this.star(Icons.star_half));
-      } else {
-        stars.add(this.star(Icons.star_border));
-      }
-      numberStars--;
-    }
-
-    return Row(children: stars);
   }
 }
