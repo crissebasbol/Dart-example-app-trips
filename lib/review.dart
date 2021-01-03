@@ -20,18 +20,6 @@ class Review extends StatelessWidget {
       ),
     );
 
-    final userInfo = Container(
-      margin: EdgeInsets.only(left: 20.0),
-      child: Text(
-        details,
-        textAlign: TextAlign.left,
-        style: TextStyle(
-            fontFamily: "Lato", fontSize: 13.0, color: Color(0xFFa3a5a7)),
-      ),
-    );
-
-    final userStars = Utils.showStars(3.5);
-
     final userInfoStars = Row(
       children: [
         Container(

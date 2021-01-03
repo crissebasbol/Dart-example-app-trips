@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:tripss_applicatin/review.dart';
+import 'package:flutter/services.dart';
+import 'package:tripss_applicatin/header_appbar.dart';
+import 'package:tripss_applicatin/review_list.dart';
 import 'description_place.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.light));
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   String descriptionDummy =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum diam ut molestie lobortis. Maecenas sed mollis felis. Phasellus egestas eleifend commodo. Suspendisse potenti. Vestibulum a sagittis nisl, quis tempus enim. Sed vitae lectus tincidunt, maximus nunc a, faucibus nulla. Aliquam euismod, eros at scelerisque mattis, diam lectus volutpat metus, sed sodales tortor odio ut nunc. Proin et elit pulvinar, pharetra elit eget, vestibulum erat. Ut ornare efficitur massa, in sodales neque tempus vitae.";
-  String pathImage = "assets/images/people.jpg";
   String name = "Varuna Yasas";
   String details = "1 review 5 photos";
   String comments = "There is an amazing place in Sri Lanka";
@@ -36,16 +40,16 @@ class MyApp extends StatelessWidget {
         ),
         //home: MyHomePage(title: 'Flutter Demo Home Page'),
         home: Scaffold(
-          appBar: AppBar(
-            title: Text("Hola mundo feliz"),
-          ),
-          body: Center(
-            child: Column(
-              children: [
-                new DesciptionPlace("Bahamas", 3.5, descriptionDummy),
-                new Review(pathImage, name, details, comments)
-              ],
-            ),
+          body: Stack(
+            children: [
+              ListView(
+                children: [
+                  DesciptionPlace("Bahamas", 3.5, descriptionDummy),
+                  ReviewList()
+                ],
+              ),
+              HeaderAppbar()
+            ],
           ),
         ));
   }
