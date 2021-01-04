@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tripss_applicatin/header_appbar.dart';
-import 'package:tripss_applicatin/review_list.dart';
-import 'description_place.dart';
+import 'package:tripss_applicatin/platzi_trips_cupertino.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -12,46 +10,34 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  String descriptionDummy =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum diam ut molestie lobortis. Maecenas sed mollis felis. Phasellus egestas eleifend commodo. Suspendisse potenti. Vestibulum a sagittis nisl, quis tempus enim. Sed vitae lectus tincidunt, maximus nunc a, faucibus nulla. Aliquam euismod, eros at scelerisque mattis, diam lectus volutpat metus, sed sodales tortor odio ut nunc. Proin et elit pulvinar, pharetra elit eget, vestibulum erat. Ut ornare efficitur massa, in sodales neque tempus vitae.";
-  String name = "Varuna Yasas";
-  String details = "1 review 5 photos";
-  String comments = "There is an amazing place in Sri Lanka";
+  final String name = "Varuna Yasas";
+  final String details = "1 review 5 photos";
+  final String comments = "There is an amazing place in Sri Lanka";
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
-          primarySwatch: Colors.green,
-          // This makes the visual density adapt to the platform that you run
-          // the app on. For desktop platforms, the controls will be smaller and
-          // closer together (more dense) than on mobile platforms.
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        //home: MyHomePage(title: 'Flutter Demo Home Page'),
-        home: Scaffold(
-          body: Stack(
-            children: [
-              ListView(
-                children: [
-                  DesciptionPlace("Bahamas", 3.5, descriptionDummy),
-                  ReviewList()
-                ],
-              ),
-              HeaderAppbar()
-            ],
-          ),
-        ));
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.green,
+        // This makes the visual density adapt to the platform that you run
+        // the app on. For desktop platforms, the controls will be smaller and
+        // closer together (more dense) than on mobile platforms.
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      //home: MyHomePage(title: 'Flutter Demo Home Page'),
+      //home: PlatziTrips());
+      home: PlatziTripsCupertino(),
+    );
   }
 }
 
