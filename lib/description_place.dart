@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tripss_applicatin/button_purple.dart';
 import 'package:tripss_applicatin/utils.dart';
 
 class DesciptionPlace extends StatelessWidget {
@@ -40,7 +41,8 @@ class DesciptionPlace extends StatelessWidget {
     );
 
     final toReturn = Column(
-      children: [titleStars, description],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [titleStars, description, ButtonPurple("Navigate")],
     );
 
     return toReturn;
